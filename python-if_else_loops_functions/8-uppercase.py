@@ -5,4 +5,3 @@ def uppercase(str):
             print('{}'.format(chr(ord(s)-32)), end='')
         else:
             print('{}'.format(s), end='')
-uppercase("Best School 98 Battery street")
