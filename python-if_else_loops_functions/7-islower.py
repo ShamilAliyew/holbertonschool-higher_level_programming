@@ -9,4 +9,4 @@ def islower(s):
         return True
     else:
         return False
-print(islower(''))
+print(islower('H'))
