@@ -3,4 +3,4 @@ def print_last_digit(number):
     if type(number) == str:
         raise Exception("The input is not a string")
     else:
-        return number % 10 if number >= 0 else number % -10
+        print(number % 10 if number >= 0 else number % -10)
