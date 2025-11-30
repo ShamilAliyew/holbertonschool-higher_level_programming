@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 def islower(s):
+    if not  s:
+        raise Exception('Empty string not allowed')
     l = []
     for i in range(93, 127):
         l.append(chr(i))
@@ -7,3 +9,4 @@ def islower(s):
         return True
     else:
         return False
+print(islower(''))
