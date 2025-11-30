@@ -1,9 +1,5 @@
 #!/usr/bin/python3
 def islower(s):
-    l = []
-    for i in range(97, 123):
-        l.append(chr(i))
-    if s in l:
-        return True
-    else:
-        return False
+   if ord(s) < 122 and ord(s) >= 97:
+      return True
+   return False
