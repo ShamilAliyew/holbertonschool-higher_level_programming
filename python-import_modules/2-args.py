@@ -9,4 +9,4 @@ if __name__ == "__main__":
     elif len(arguments) > 2:
         print("{} arguments:".format(len(arguments)-1))
         for i in range(len(arguments)):
-            print("{}: {}".format(i, arguments[i+1]))
+            print("{}: {}".format(i+1, arguments[i+1]))
