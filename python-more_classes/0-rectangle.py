@@ -5,5 +5,4 @@
 class Rectangle:
     """Rectangle class"""
     def __init__(self):
-        self.width = width
-        self.height = height
+        
