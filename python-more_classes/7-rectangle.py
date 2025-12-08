@@ -54,9 +54,33 @@ class Rectangle:
             return ""
         r = []
         for i in range(self.height):
-            r.append(Rectangle.print_symbol*self.width)
+            r.append(str(self.print_symbol)*self.width)
 
         return "\n".join(r)
 
     def __repr__(self):
         return 'Rectangle({}, {})'.format(self.width, self.height)
+
+my_rectangle_1 = Rectangle(8, 4)
+print(my_rectangle_1)
+print("--")
+my_rectangle_1.print_symbol = "&"
+print(my_rectangle_1)
+print("--")
+
+my_rectangle_2 = Rectangle(2, 1)
+print(my_rectangle_2)
+print("--")
+Rectangle.print_symbol = "C"
+print(my_rectangle_2)
+print("--")
+
+my_rectangle_3 = Rectangle(7, 3)
+print(my_rectangle_3)
+
+print("--")
+
+my_rectangle_3.print_symbol = ["C", "is", "fun!"]
+print(my_rectangle_3)
+
+print("--")
