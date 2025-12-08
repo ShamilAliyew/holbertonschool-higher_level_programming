@@ -39,3 +39,11 @@ class Rectangle:
         if self.width == 0 or self.height == 0:
             return 0
         return 2*(self.width + self.height)
+
+    def print(self):
+        if self.width == 0 or self.height == 0:
+            return ''
+        for i in range(self.width):
+            print()
+        for j in range(self.height):
+            print("#")
