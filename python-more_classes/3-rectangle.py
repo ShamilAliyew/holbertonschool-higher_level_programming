@@ -44,6 +44,6 @@ class Rectangle:
         if self.width == 0 or self.height == 0:
             return ""
         for i in range(self.width):
-            print()
+            print("\n")
             for j in range(self.height):
                 print("#")
