@@ -10,10 +10,10 @@ class Rectangle:
     def __init__(self, width=0, height=0):
         self.width = width
         self.height = height
-        number_of_instances += 1
+        Rectangle.number_of_instances += 1
 
     def __del__(self):
-        number_of_instances -= 1
+        Rectangle.number_of_instances -= 1
         print('Bye rectangle...')
 
     @property
@@ -59,7 +59,3 @@ class Rectangle:
 
     def __repr__(self):
         return 'Rectangle({}, {})'.format(self.width, self.height)
-
-    def message(self):
-        if not self:
-            return
