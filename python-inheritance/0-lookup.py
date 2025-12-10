@@ -2,7 +2,7 @@
 """the list of available attributes and methods of an object"""
 
 
-def lookup(cls):
+def lookup(obj):
     """a function that returns the list of available attributes and
      methods of an object"""
-    return cls.__dict__
+    return list(obj.__dict__)
