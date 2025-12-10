@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 """a class BaseGeometry"""
-from django.utils.timezone import override
 
 
 class BaseGeometry:
