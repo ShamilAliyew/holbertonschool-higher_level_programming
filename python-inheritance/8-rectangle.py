@@ -18,11 +18,7 @@ class BaseGeometry:
 class Rectangle(BaseGeometry):
     """a class Rectangle"""
     def __init__(self, width, height):
+        self.integer_validator("width", width)
+        self.integer_validator("height", height)
         self.__width = width
         self.__height = height
-
-    def integer_validator(self, width, height):
-        if type(width) is not int or type(height) is not int:
-            raise TypeError("%d and %d must be an integer" % (width, height))
-        if width <= 0 or height <=0:
-            raise ValueError("%d and %d must be greater than 0" % (width, height))
