@@ -3,6 +3,7 @@
 
 
 class MyClass:
+    """a function that returns the list of available attributes and methods of an object"""
     name = "MyClass"
     count = 1
     def anyFunction(self):
