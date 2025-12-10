@@ -22,7 +22,7 @@ class Rectangle(BaseGeometry):
         self.__height = height
 
     def integer_validator(self, width, height):
-        if type(width) is not int and type(height) is not int:
-            raise TypeError("%d and %d must be an integer" % width, height)
-        if width <= 0 and height <=0:
-            raise ValueError("%d and %d must be greater than 0" % width, height)
+        if type(width) is not int or type(height) is not int:
+            raise TypeError("%d and %d must be an integer" % (width, height))
+        if width <= 0 or height <=0:
+            raise ValueError("%d and %d must be greater than 0" % (width, height))
