@@ -1,13 +1,15 @@
 #!/usr/bin/python3
-import json, sys
 """a script that adds all arguments to a Python list, and then save them to a file"""
+import json, sys
 
 
 save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
 load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
 arguments = sys.argv[1:]
 filename = 'add_item.json'
-
-items = load_from_json_file(filename)
+try:
+    items = load_from_json_file(filename)
+except:
+    items = []
 items.extend(arguments)
 save_to_json_file(items, filename)
