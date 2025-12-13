@@ -7,5 +7,5 @@ def read_file(filename=""):
     try:
         with open(filename, "r") as file:
             print(file.read(),end='')
-    except FileNotFoundError:
-        print("file doesn't exist")
+    except :
+        return FileNotFoundError
