@@ -10,4 +10,4 @@ class Student:
 
     def to_json(self, attrs=None):
 
-        return self.__dict__
+        return self.__dict__.get(attrs)
