@@ -9,5 +9,6 @@ class Student:
         self.age = age
 
     def to_json(self, attrs=None):
-
-        return self.__dict__.get(attrs)
+        if type(attrs) == str:
+            return self.__dict__.get(attrs)
+        return self.__dict__
