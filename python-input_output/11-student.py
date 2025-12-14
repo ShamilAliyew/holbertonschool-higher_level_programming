@@ -19,12 +19,7 @@ class Student:
 
     def reload_from_json(self, json):
         obj = {}
-        pairs = json.split(',')
-        for pair in pairs:
-            key, value = pair.split(':')
-            # Basic type handling
-            if value.isdigit():
-                obj[key] = int(value)
-            else:
-                obj[key] = value
+        for k, v in json:
+            if hasattr(self, k):
+                obj[k] = getattr(self,k)
         return obj
