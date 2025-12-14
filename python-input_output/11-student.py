@@ -19,7 +19,6 @@ class Student:
 
     def reload_from_json(self, json):
         obj = {}
-        for k, v in json:
-            if hasattr(self, k):
-                obj[k] = getattr(self,k)
+        for k, v in json.items():
+            setattr(self, k, v)
         return obj
