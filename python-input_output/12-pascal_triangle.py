@@ -1,9 +1,6 @@
 #!/usr/bin/python3
 """a function that returns a list of lists of integers
  representing the Pascal’s triangle of n"""
-from random import triangular
-
-from PIL.TiffImagePlugin import ROWSPERSTRIP
 
 
 def pascal_triangle(n):
