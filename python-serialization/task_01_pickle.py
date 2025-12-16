@@ -26,4 +26,4 @@ class CustomObject:
                 return pickle.load(file)
             except EOFError:
                 raise ValueError("File is empty or corrupt")
-            return None
+                return None
