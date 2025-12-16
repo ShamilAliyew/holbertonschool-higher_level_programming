@@ -1,2 +1,3 @@
 --Show All Databases
-SHOW DATABASES;
+SHOW DATABASES
+ORDER BY `Database` ASC;
