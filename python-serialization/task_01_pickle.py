@@ -8,7 +8,7 @@ class CustomObject:
         self.is_student = is_student
 
     def display(self):
-        return f"Name: {self.name}\nAge: {self.age}\nis_student: {self.is_student}"
+        print(f"Name: {self.name}\nAge: {self.age}\nis_student: {self.is_student}")
 
     def serialize(self, filename):
         with open(filename, "wb") as f:
@@ -23,3 +23,15 @@ class CustomObject:
                 return pickle.load(file)
             except EOFError:
                 raise ValueError("File is empty or corrupt")
+
+obj = CustomObject(name="John", age=25, is_student=True)
+print("Original Object:")
+obj.display()
+
+# Serialize the object
+obj.serialize("object.pkl")
+
+# Deserialize the object into a new instance
+new_obj = CustomObject.deserialize("object.pkl")
+print("\nDeserialized Object:")
+new_obj.display()
