@@ -11,15 +11,17 @@ class CustomObject:
         return f"Name: {self.name}\nAge: {self.age}\nis_student: {self.is_student}"
 
     def serialize(self, filename):
-        with open(filename, "wb") as file:
-            pickle.dump(self, file)
+        with open(filename, "wb") as f:
+            pickle.dump(self,f)
 
     @classmethod
     def deserialize(cls, filename):
         if not os.path.exists(filename) and os.path.getsize(filename) == 0:
             raise TypeError("File is not exists or empty")
-        with open(filename, "rb+") as file:
+        with open(filename, "rb") as file:
             try:
-                return pickle.load(file)
+                data = pickle.load(file)
+                file.flush()
+                return data
             except EOFError:
                 raise ValueError("File is empty or corrupt")
