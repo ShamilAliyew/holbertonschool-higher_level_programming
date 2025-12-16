@@ -6,10 +6,24 @@ import  json
 
 
 def serialize_and_save_to_file(data, filename):
-    with open(filename, "w") as file:
-        json.dump(data, file)
+    def serialize(obj):
+        if isinstance(obj, set):
+            return {
+                "__type__": "set",
+                "elements": list(obj)
+            }
+        return obj
+
+    with open(filename, "w", encoding="utf-8") as file:
+        json.dump(data, file, default=serialize)
 
 
 def load_and_deserialize(filename):
-    with open(filename, "r") as file:
-        data = json.load(file)
+    def deserialize(obj):
+        if "__type__" in obj and obj["__type__"] == "set":
+            return set(obj["elements"])
+        return obj
+
+    with open(filename, "r", encoding="utf-8") as file:
+        return json.load(file, object_hook=deserialize)
+
