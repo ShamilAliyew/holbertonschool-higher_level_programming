@@ -10,10 +10,10 @@ class CustomObject:
         return f"Name: {self.name}\nAge: {self.age}\nis_student: {self.is_student}"
 
     def serialize(self, filename):
-        with open(filename, "w") as file:
-            pickle.dump(self.display(), file)
+        with open(filename, "wb") as file:
+            pickle.dump(self, file)
 
     @classmethod
     def deserilize(cls, filename):
-        with open(filename, "r") as file:
+        with open(filename, "rb") as file:
             return pickle.load(file)
