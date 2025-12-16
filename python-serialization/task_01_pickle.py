@@ -22,6 +22,6 @@ class CustomObject:
         try:
             with open(filename, "rb") as file:
                 return pickle.load(file)
-        except EOFError:
-            raise ValueError("File is empty or corrupt")
+        except Exception as ex:
+            print(f"Error during deserialization: {ex}")
             return None
