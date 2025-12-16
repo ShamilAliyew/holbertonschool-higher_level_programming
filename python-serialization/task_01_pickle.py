@@ -19,7 +19,7 @@ class CustomObject:
 
     @classmethod
     def deserialize(cls, filename):
-        if not os.path.exists(filename) or os.path.getsize(filename) == 0:
+        if not os.path.exists(filename):
             raise ValueError("File is not exists or empty")
 
         try:
