@@ -12,7 +12,7 @@ def serialize_and_save_to_file(data, filename):
                 "__type__": "set",
                 "elements": list(obj)
             }
-        return obj
+        raise TypeError("Object type not serializable")
 
     with open(filename, "w", encoding="utf-8") as file:
         json.dump(data, file, default=serialize)
