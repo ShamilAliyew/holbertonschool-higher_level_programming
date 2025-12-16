@@ -3,7 +3,7 @@ import json
 
 def convert_csv_to_json(csv_file):
     with open(csv_file, newline="") as f:
-        read = csv.DictReader(csv_file)
+        read = csv.DictReader(f)
         data = list(read)
 
     try:
