@@ -1,3 +1,3 @@
---Show All Databases
-SHOW DATABASES
-ORDER BY `Database` ASC;
+-- Lists all databases of the MySQL server
+-- Shows existing databases
+SHOW DATABASES;
