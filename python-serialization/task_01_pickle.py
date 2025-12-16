@@ -1,4 +1,5 @@
 import pickle
+import os
 
 class CustomObject:
     def __init__(self, name, age, is_student):
@@ -15,5 +16,7 @@ class CustomObject:
 
     @classmethod
     def deserialize(cls, filename):
+        if not os.path.exists(filename) and os.path.getsize(filename) == 0:
+            raise ValueError("File is not exists or empty")
         with open(filename, "rb") as file:
             return pickle.load(file)
