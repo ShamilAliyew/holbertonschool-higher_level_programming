@@ -5,4 +5,4 @@ SCORE as "score",
 COUNT(*) AS "number"
 FROM second_table
 GROUP BY SCORE
-ORDER BY SCORE LIMIT 10;
+ORDER BY SCORE DESC LIMIT 10;
