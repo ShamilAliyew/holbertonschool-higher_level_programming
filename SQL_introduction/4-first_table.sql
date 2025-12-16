@@ -1,4 +1,4 @@
 -- a script that creates a table called first_table in the current database
 -- a script that creates a table called first_table in the current database
- CREATE TABLE(ID INT,
+CREATE TABLE IF NOT EXISTS(ID INT,
               NAME VARCHAR(256));
