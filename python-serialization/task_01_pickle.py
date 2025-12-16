@@ -19,9 +19,6 @@ class CustomObject:
 
     @classmethod
     def deserialize(cls, filename):
-        if not os.path.exists(filename):
-            raise ValueError("File is not exists or empty")
-
         try:
             with open(filename, "rb") as file:
                 return pickle.load(file)
