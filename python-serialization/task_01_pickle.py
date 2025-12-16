@@ -16,12 +16,10 @@ class CustomObject:
 
     @classmethod
     def deserialize(cls, filename):
-        if not os.path.exists(filename) and os.path.getsize(filename) == 0:
+        if not os.path.exists(filename) or os.path.getsize(filename) == 0:
             raise TypeError("File is not exists or empty")
         with open(filename, "rb") as file:
             try:
-                data = pickle.load(file)
-                file.flush()
-                return data
+                return pickle.load(file)
             except EOFError:
                 raise ValueError("File is empty or corrupt")
