@@ -11,8 +11,6 @@ class CustomObject:
         return f"Name: {self.name}\nAge: {self.age}\nis_student: {self.is_student}"
 
     def serialize(self, filename):
-        if not os.path.exists(filename) and os.path.getsize(filename) == 0:
-            raise ValueError("File is not exists or empty")
         with open(filename, "wb") as file:
             pickle.dump(self, file)
 
